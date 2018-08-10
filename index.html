@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Alligators To Know</title>
@@ -8,27 +9,29 @@
   <script src="profiles.js"></script>
   <script src="header.js"></script>
 </head>
+
 <body>
   <header id="headerApp">
     <headline title="My Favorite Alligators"></headline>
   </header>
-
-  <div class="filters">
-    <label>
-      <input type="checkbox" name="icecream">
+  <div id='profileListings'>
+    <div class="filters">
+      <label>
+      <input type="checkbox" v-on:change="iceCreamFilter" v-model="iceCreamOnly">
       Only show alligators that like ice cream
     </label>
-  </div>
-
-  <section class="profile-container" id='profileListings'>
-    <div class="profile" v-for="profile in profiles">
-      <h3>{{profile.name}}</h3>
-      <!-- <h3>Wanda Snapson</h3> -->
-      <img v-bind:src="profile.imgSource" v-bind:alt="profile.name">
-      <p>Hobbies include {{profile.hobbies}}.</p>
     </div>
 
+    <section class="profile-container">
+      <div class="profile" v-for="profile in profiles">
+        <h3>{{profile.name}}{{profile.likesIceCream}}</h3>
+        <!-- <h3>Wanda Snapson</h3> -->
+        <img v-bind:src="profile.imgSource" v-bind:alt="profile.name">
+        <p>Hobbies include {{profile.hobbies}}.</p>
+      </div>
+  </div>
   </section>
 
 </body>
+
 </html>
