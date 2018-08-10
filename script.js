@@ -16,10 +16,11 @@ var gators = [
     imgSource: "http://www.vaguebuttrue.com/images/1449775760-alligatorclimbsfenceWEBSITE.jpg"
   }
 ]
+let profileListings;
 document.addEventListener("DOMContentLoaded", function(){
-  var app = new Vue({
-    el: '#app',
+  profileListings = new Vue({
+    el: '#profileListings',
     data: {
-      message: 'Hello Vue!'
+      profiles: gators
     }})
 })
